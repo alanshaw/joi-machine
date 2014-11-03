@@ -1,0 +1,28 @@
+{
+  "name": "joi-machine",
+  "version": "0.0.0",
+  "description": "Generate joi schema from JSON",
+  "main": "joi-machine.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "keywords": [
+    "joi",
+    "machine",
+    "validation",
+    "generator"
+  ],
+  "author": "Alan Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "joi": "^4.7.0",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "concat-stream": "^1.4.6",
+    "tape": "^3.0.1"
+  },
+  "bin": {
+    "joi-machine": "bin/joi-machine.js"
+  }
+}
