@@ -1,4 +1,4 @@
-# Joi Machine [![Dependency Status](https://david-dm.org/alanshaw/joi-machine.svg?style=flat)](https://david-dm.org/alanshaw/joi-machine)
+# Joi Machine [![Build Status](https://img.shields.io/travis/alanshaw/joi-machine.svg?style=flat)](https://travis-ci.org/alanshaw/joi-machine) [![Dependency Status](https://david-dm.org/alanshaw/joi-machine.svg?style=flat)](https://david-dm.org/alanshaw/joi-machine)
 
 Generate a [Joi](https://github.com/hapijs/joi) schema from some JSON or a JS object.
 
