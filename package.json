@@ -15,7 +15,7 @@
   "author": "Alan Shaw",
   "license": "ISC",
   "dependencies": {
-    "joi": "^4.7.0",
+    "joi": "^5.1.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {
