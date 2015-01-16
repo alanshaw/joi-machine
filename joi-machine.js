@@ -1,5 +1,6 @@
 var through = require('through2')
 var Joi = require('joi')
+var unquotedValidator = require('unquoted-property-validator')
 
 var machine = function () {
   var json = ''
@@ -76,7 +77,7 @@ function buildSchema (stream, val) {
     if (keys.length) {
       stream.push('.keys({')
       keys.forEach(function (k, i) {
-        stream.push(k + ': ')
+        stream.push(unquotedValidator(k).quotedValue + ': ')
         buildSchema(stream, val[k])
         if (i < keys.length - 1) {
           stream.push(', ')

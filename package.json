@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "joi": "^5.1.0",
-    "through2": "^0.6.3"
+    "through2": "^0.6.3",
+    "unquoted-property-validator": "^1.0.0"
   },
   "devDependencies": {
     "concat-stream": "^1.4.6",

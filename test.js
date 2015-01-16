@@ -163,3 +163,17 @@ test('Create schema for object of all sorts', function (t) {
     t.end()
   })
 })
+
+test('Create schema for object with keys that require quotes', function (t) {
+  t.plan(1)
+
+  var data = {
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-xmlns:xsd": "http://www.w3.org/2001/XMLSchema"
+  }
+
+  testSchema(data, function (er) {
+    t.ifError(er, 'Validating schema against data')
+    t.end()
+  })
+})
