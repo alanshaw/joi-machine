@@ -58,7 +58,7 @@ function buildSchema (stream, val) {
     stream.push('Joi.array()')
 
     if (val.length) {
-      stream.push('.includes(')
+      stream.push('.items(')
       val.forEach(function (v, i) {
         buildSchema(stream, v)
         if (i < val.length - 1) {
