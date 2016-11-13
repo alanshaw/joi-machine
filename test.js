@@ -43,7 +43,29 @@ test('Create schema for object', function (t) {
 test('Create schema for string', function (t) {
   t.plan(1)
 
-  var data = "OH HAI!"
+  var data = 'OH HAI!'
+
+  testSchema(data, function (er) {
+    t.ifError(er, 'Validating schema against data')
+    t.end()
+  })
+})
+
+test('Create schema for email', function (t) {
+  t.plan(1)
+
+  var data = 'test@example.org'
+
+  testSchema(data, function (er) {
+    t.ifError(er, 'Validating schema against data')
+    t.end()
+  })
+})
+
+test('Create schema for uri', function (t) {
+  t.plan(1)
+
+  var data = 'http://example.org'
 
   testSchema(data, function (er) {
     t.ifError(er, 'Validating schema against data')
@@ -117,7 +139,7 @@ test('Create schema for function', function (t) {
 test('Create schema for undefined', function (t) {
   t.plan(1)
 
-  var data = undefined
+  var data
 
   testSchema(data, function (er, schema) {
     t.ifError(er, 'Validating schema against data')
@@ -155,7 +177,7 @@ test('Create schema for object of all sorts', function (t) {
     bar: {foo: true},
     baz: [45.6, 34.67, 10.5],
     boz: 'foobar',
-    bozo: 34 
+    bozo: 34
   }
 
   testSchema(data, function (er) {
@@ -168,8 +190,8 @@ test('Create schema for object with keys that require quotes', function (t) {
   t.plan(1)
 
   var data = {
-    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "-xmlns:xsd": "http://www.w3.org/2001/XMLSchema"
+    '-xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
+    '-xmlns:xsd': 'http://www.w3.org/2001/XMLSchema'
   }
 
   testSchema(data, function (er) {

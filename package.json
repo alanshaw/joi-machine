@@ -4,7 +4,7 @@
   "description": "Generate joi schema from JSON",
   "main": "joi-machine.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "standard && istanbul cover tape test.js"
   },
   "keywords": [
     "joi",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "concat-stream": "^1.5.0",
+    "istanbul": "^0.4.5",
+    "standard": "^8.5.0",
     "tape": "^4.2.1"
   },
   "bin": {

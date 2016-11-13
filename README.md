@@ -9,7 +9,7 @@ Useful for creating a base to build your schema from when you have a big payload
 ```sh
 npm install -g joi-machine
 echo '{"foo": {}, "bar": 45, "baz": ["foob"]}' | joi-machine
-Joi.object().keys({foo: Joi.object(), bar: Joi.number().integer(), baz: Joi.array().includes(Joi.string())})
+Joi.object().keys({foo: Joi.object(), bar: Joi.number().integer(), baz: Joi.array().items(Joi.string())})
 ```
 
 **or**
@@ -24,7 +24,7 @@ fs.createReadStream(__dirname + '/data.json')
   .pipe(joiMachine())
   .pipe(concat({encoding: 'string'}, console.log))
 
-// Output: Joi.object().keys({foo: Joi.object(), bar: Joi.number().integer(), baz: Joi.array().includes(Joi.string())})
+// Output: Joi.object().keys({foo: Joi.object(), bar: Joi.number().integer(), baz: Joi.array().items(Joi.string())})
 ```
 
 **or**
@@ -42,6 +42,5 @@ generator.pipe(concat({encoding: 'string'}, console.log))
 generator.write(require('./data.json'))
 generator.end()
 
-// Output: Joi.object().keys({foo: Joi.object(), bar: Joi.number().integer(), baz: Joi.array().includes(Joi.string())})
+// Output: Joi.object().keys({foo: Joi.object(), bar: Joi.number().integer(), baz: Joi.array().items(Joi.string())})
 ```
-
